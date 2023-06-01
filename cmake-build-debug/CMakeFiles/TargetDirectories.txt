@@ -1,0 +1,3 @@
+/home/ofr/CLionProjects/EX5-CPP-B/cmake-build-debug/CMakeFiles/EX5_CPP_B.dir
+/home/ofr/CLionProjects/EX5-CPP-B/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ofr/CLionProjects/EX5-CPP-B/cmake-build-debug/CMakeFiles/rebuild_cache.dir
