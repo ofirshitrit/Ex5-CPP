@@ -17,6 +17,7 @@ int main() {
     for (int el : container.getElements()){
         std::cout << el << ' ';
     }
+    std::cout << std::endl;
     // Use AscendingIterator to display elements in ascending order
     std::cout << "Elements in ascending order:\n";
     MagicalContainer::AscendingIterator ascIter(container);
