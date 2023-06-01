@@ -59,9 +59,10 @@ namespace ariel {
         class SideCrossIterator {
         private:
             MagicalContainer& container;
+            int currentIndex;
 
         public:
-            SideCrossIterator(MagicalContainer& cont);
+            SideCrossIterator(MagicalContainer& cont,int currentIndex = 0);
             SideCrossIterator(SideCrossIterator& other) : container(other.container){}
             ~SideCrossIterator() = default;
 
@@ -79,7 +80,7 @@ namespace ariel {
             bool operator>(const SideCrossIterator& other) const;
 
             //for tidy
-            SideCrossIterator(SideCrossIterator&& other) = delete;
+            SideCrossIterator(SideCrossIterator&& other) = default;
             SideCrossIterator& operator=(SideCrossIterator&& other) = delete;
 
         };
@@ -87,9 +88,10 @@ namespace ariel {
         class PrimeIterator {
         private:
             MagicalContainer& container;
+            int currentIndex;
 
         public:
-            PrimeIterator(MagicalContainer& cont);
+            PrimeIterator(MagicalContainer& cont , int index = 0);
             PrimeIterator(PrimeIterator& other) : container(other.container){}
             ~PrimeIterator() = default;
 

@@ -62,13 +62,11 @@ MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operat
 }
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() {
-   //todo
    MagicalContainer::AscendingIterator itr(container);
     return itr;
 }
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() {
-    //todo
     MagicalContainer::AscendingIterator itr(container, container.size());
     return itr;
 
@@ -83,16 +81,18 @@ MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &cont , 
 }
 
 
-MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer &cont) : container(cont){
+MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer &cont,int index) : container(cont) , currentIndex(index){
 
 }
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::begin() {
-    return *this;
+    MagicalContainer::SideCrossIterator itr(container);
+    return itr;
 }
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() {
-    return *this;
+    MagicalContainer::SideCrossIterator itr(container, container.size());
+    return itr;
 }
 
 MagicalContainer::SideCrossIterator &
@@ -109,25 +109,25 @@ MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operat
 }
 
 bool MagicalContainer::SideCrossIterator::operator==(const MagicalContainer::SideCrossIterator &other) const {
-    return false;
+    return &container == &(other.container) && currentIndex == other.currentIndex;
 }
 bool MagicalContainer::SideCrossIterator::operator!=(const MagicalContainer::SideCrossIterator &other) const {
-    return false;
+    return !(*this == other);
 }
 
 bool MagicalContainer::SideCrossIterator::operator<(const MagicalContainer::SideCrossIterator &other) const {
-    return false;
+    return currentIndex < other.currentIndex;
 }
 
 bool MagicalContainer::SideCrossIterator::operator>(const MagicalContainer::SideCrossIterator &other) const {
-    return false;
+    return currentIndex > other.currentIndex;
 }
 
 MagicalContainer &MagicalContainer::SideCrossIterator::getContainer() const {
     return container;
 }
 
-MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &cont) : container(cont){
+MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &cont , int index ) : container(cont), currentIndex(index){
 
 }
 
