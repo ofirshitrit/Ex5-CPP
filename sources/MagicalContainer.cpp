@@ -53,7 +53,7 @@ bool MagicalContainer::AscendingIterator::operator>(const MagicalContainer::Asce
 }
 
 int MagicalContainer::AscendingIterator::operator*() const {
-    return container.getElements()[currentIndex];
+    return container.getElements()[static_cast<vector<int>::size_type>(currentIndex)];
 }
 
 MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator++() {

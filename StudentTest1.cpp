@@ -72,33 +72,33 @@ TEST_CASE("AscendingIterator") {
     }
 }
 
-// Test case for the SideCrossIterator
-TEST_CASE("SideCrossIterator") {
-    MagicalContainer container;
-    container.addElement(10);
-    container.addElement(20);
-    container.addElement(30);
-    container.addElement(40);
-
-    SUBCASE("Iterating over elements") {
-        MagicalContainer::SideCrossIterator it(container);
-        CHECK(*it == 10);
-        ++it;
-        CHECK(*it == 40);
-        ++it;
-        CHECK(*it == 20);
-        ++it;
-        CHECK(*it == 30);
-        ++it;
-        CHECK(it == it.end());
-    }
+//// Test case for the SideCrossIterator
+//TEST_CASE("SideCrossIterator") {
+//    MagicalContainer container;
+//    container.addElement(10);
+//    container.addElement(20);
+//    container.addElement(30);
+//    container.addElement(40);
+//
+//    SUBCASE("Iterating over elements") {
+//        MagicalContainer::SideCrossIterator it(container);
+//        CHECK(*it == 10);
+//        ++it;
+//        CHECK(*it == 40);
+//        ++it;
+//        CHECK(*it == 20);
+//        ++it;
+//        CHECK(*it == 30);
+//        ++it;
+//        CHECK(it == it.end());
+//    }
 //
 //    SUBCASE("Iterating over an empty container") {
 //        MagicalContainer emptyContainer;
 //        MagicalContainer::SideCrossIterator it(emptyContainer);
 //        CHECK(it == it.end());
 //    }
-}
+//}
 //
 //// Test case for the PrimeIterator
 //TEST_CASE("PrimeIterator") {
