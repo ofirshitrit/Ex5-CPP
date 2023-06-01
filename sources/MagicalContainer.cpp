@@ -63,15 +63,18 @@ MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operat
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() {
    //todo
-    return *this;
+   MagicalContainer::AscendingIterator itr(container);
+    return itr;
 }
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() {
     //todo
-    return *this;
+    MagicalContainer::AscendingIterator itr(container, container.size());
+    return itr;
+
 }
 
-MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &cont) : container(cont) , currentIndex(0) {
+MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &cont , int index) : container(cont) , currentIndex(index) {
     sort(cont.getElements().begin(),cont.getElements().end());
 }
 
