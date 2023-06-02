@@ -38,7 +38,7 @@ bool MagicalContainer::AscendingIterator::operator!=(const AscendingIterator& ot
 MagicalContainer::AscendingIterator &
 MagicalContainer::AscendingIterator::operator=(const MagicalContainer::AscendingIterator &other) {
     if (this != &other){
-       currentIndex = other.currentIndex;
+        currentIndex = other.currentIndex;
     }
     return *this;
 }
@@ -62,7 +62,7 @@ MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operat
 }
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() {
-   MagicalContainer::AscendingIterator itr(container);
+    MagicalContainer::AscendingIterator itr(container);
     return itr;
 }
 
@@ -76,51 +76,83 @@ MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &cont , 
     sort(cont.getElements().begin(),cont.getElements().end());
 }
 
- MagicalContainer &MagicalContainer::AscendingIterator::getContainer()  {
+MagicalContainer &MagicalContainer::AscendingIterator::getContainer()  {
     return container;
 }
 
 
-MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer &cont,int index) : container(cont) , currentIndex(index){
+MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer &cont) : container(cont) , leftIndex(0), rightIndex(cont.size() - 1), isLeftTurn(true){
 
 }
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::begin() {
-    MagicalContainer::SideCrossIterator itr(container);
-    return itr;
+    return SideCrossIterator(container);
 }
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() {
-    MagicalContainer::SideCrossIterator itr(container, container.size());
-    return itr;
+    SideCrossIterator iter(container);
+    iter.leftIndex = container.size();
+    iter.rightIndex = -1;
+    iter.isLeftTurn = true;
+    return iter;
 }
 
 MagicalContainer::SideCrossIterator &
-MagicalContainer::SideCrossIterator::operator=(const MagicalContainer::SideCrossIterator &other) {
+MagicalContainer::SideCrossIterator::operator=(const MagicalContainer::SideCrossIterator &other) { //todo
+    if (this != &other){
+        leftIndex = other.leftIndex;
+        rightIndex = other.rightIndex;
+        isLeftTurn = other.isLeftTurn;
+    }
     return *this;
 }
 
 int MagicalContainer::SideCrossIterator::operator*() const {
-    return 0;
+    if (isLeftTurn)
+        return container.elements[leftIndex];
+    else
+        return container.elements[rightIndex];
 }
 
 MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator++() {
+    if (isLeftTurn) {
+        ++leftIndex;
+        isLeftTurn = false;
+    }
+    else {
+        --rightIndex;
+        isLeftTurn = true;
+    }
     return *this;
 }
 
 bool MagicalContainer::SideCrossIterator::operator==(const MagicalContainer::SideCrossIterator &other) const {
-    return &container == &(other.container) && currentIndex == other.currentIndex;
+    return leftIndex == other.leftIndex && rightIndex == other.rightIndex && isLeftTurn == other.isLeftTurn;
 }
 bool MagicalContainer::SideCrossIterator::operator!=(const MagicalContainer::SideCrossIterator &other) const {
     return !(*this == other);
 }
 
 bool MagicalContainer::SideCrossIterator::operator<(const MagicalContainer::SideCrossIterator &other) const {
-    return currentIndex < other.currentIndex;
+    if (isLeftTurn && !other.isLeftTurn)
+        return false;
+    else if (!isLeftTurn && other.isLeftTurn)
+        return true;
+    else if (isLeftTurn && other.isLeftTurn)
+        return leftIndex < other.leftIndex;
+    else
+        return rightIndex > other.rightIndex;
 }
 
 bool MagicalContainer::SideCrossIterator::operator>(const MagicalContainer::SideCrossIterator &other) const {
-    return currentIndex > other.currentIndex;
+    if (isLeftTurn && !other.isLeftTurn)
+        return true;
+    else if (!isLeftTurn && other.isLeftTurn)
+        return false;
+    else if (isLeftTurn && other.isLeftTurn)
+        return leftIndex > other.leftIndex;
+    else
+        return rightIndex < other.rightIndex;
 }
 
 MagicalContainer &MagicalContainer::SideCrossIterator::getContainer() const {
@@ -175,4 +207,22 @@ MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() {
 
 MagicalContainer &MagicalContainer::PrimeIterator::getContainer() const {
     return container;
+}
+
+bool MagicalContainer::PrimeIterator::isPrime(int number)
+{
+    bool is_prime = true;
+    // 0 and 1 are not prime numbers
+    if (number == 0) {
+        is_prime = false;
+    }
+
+    for (int i = 3; i <= number / 2; ++i) {
+        if (number % i == 0) {
+            is_prime = false;
+            break;
+        }
+    }
+
+    return is_prime;
 }

@@ -59,10 +59,12 @@ namespace ariel {
         class SideCrossIterator {
         private:
             MagicalContainer& container;
-            int currentIndex;
+            int leftIndex;
+            int rightIndex;
+            bool isLeftTurn;
 
         public:
-            SideCrossIterator(MagicalContainer& cont,int currentIndex = 0);
+            SideCrossIterator(MagicalContainer& cont);
             SideCrossIterator(SideCrossIterator& other) : container(other.container){}
             ~SideCrossIterator() = default;
 
@@ -101,7 +103,7 @@ namespace ariel {
             PrimeIterator& operator=(const PrimeIterator& other);
             int operator*() const;
             PrimeIterator& operator++();
-
+            static bool isPrime(int number);
             MagicalContainer &getContainer() const;
 
             bool operator==(const PrimeIterator& other) const;
