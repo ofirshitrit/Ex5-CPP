@@ -13,11 +13,6 @@ int main() {
 
     // Print container size
     std::cout << "Size of container: " << container.size() << std::endl;
-
-    for (int el : container.getElements()){
-        std::cout << el << ' ';
-    }
-    std::cout << std::endl;
     // Use AscendingIterator to display elements in ascending order
     std::cout << "Elements in ascending order:\n";
     MagicalContainer::AscendingIterator ascIter(container);
@@ -25,14 +20,14 @@ int main() {
         std::cout << *it << ' ';   // 2 3 9 17 25
     }
     std::cout << std::endl;
-//
-//    // Use DescendingIterator to display elements in descending order
-//    std::cout << "Elements in cross order:\n";
-//    MagicalContainer::SideCrossIterator crossIter(container);
-//    for (auto it = crossIter.begin(); it != crossIter.end(); ++it) {
-//        std::cout << *it << ' ';  // 2 25 3 17 9
-//    }
-//    std::cout << std::endl;
+
+    // Use DescendingIterator to display elements in descending order
+    std::cout << "Elements in cross order:\n";
+    MagicalContainer::SideCrossIterator crossIter(container);
+    for (auto it = crossIter.begin(); it != crossIter.end(); ++it) {
+        std::cout << *it << ' ';  // 2 25 3 17 9
+    }
+    std::cout << std::endl;
 //
 //    // Use PrimeIterator to display prime numbers only
 //    std::cout << "Prime numbers:\n";

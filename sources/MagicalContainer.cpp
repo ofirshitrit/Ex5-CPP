@@ -62,17 +62,17 @@ MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operat
 }
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() {
-    MagicalContainer::AscendingIterator itr(container);
-    return itr;
+    return AscendingIterator(container);
 }
 
 MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() {
-    MagicalContainer::AscendingIterator itr(container, container.size());
-    return itr;
+    AscendingIterator iter(container);
+    iter.currentIndex = container.size();
+    return iter;
 
 }
 
-MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &cont , int index) : container(cont) , currentIndex(index) {
+MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &cont) : container(cont) , currentIndex(0) {
     sort(cont.getElements().begin(),cont.getElements().end());
 }
 
@@ -91,9 +91,9 @@ MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::begin()
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() {
     SideCrossIterator iter(container);
-    iter.leftIndex = container.size();
-    iter.rightIndex = -1;
-    iter.isLeftTurn = true;
+    iter.leftIndex = container.size();   // Set leftIndex to one position past the last element
+    iter.rightIndex = container.size() - 1;  // Set rightIndex to the last element index
+    iter.isLeftTurn = true;  // Start with left turn
     return iter;
 }
 
@@ -108,10 +108,12 @@ MagicalContainer::SideCrossIterator::operator=(const MagicalContainer::SideCross
 }
 
 int MagicalContainer::SideCrossIterator::operator*() const {
-    if (isLeftTurn)
+    if (leftIndex >= 0 && leftIndex < container.size() && isLeftTurn)
         return container.elements[leftIndex];
-    else
+    else if (rightIndex >= 0 && rightIndex < container.size() && !isLeftTurn)
         return container.elements[rightIndex];
+    else
+        throw out_of_range("Iterator out of range");
 }
 
 MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator++() {

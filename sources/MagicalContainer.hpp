@@ -33,7 +33,7 @@ namespace ariel {
             int currentIndex;
 
         public:
-            AscendingIterator(MagicalContainer& cont ,int index = 0);
+            AscendingIterator(MagicalContainer& cont);
             AscendingIterator(AscendingIterator& other) : container(other.container) , currentIndex(other.currentIndex){}
             ~AscendingIterator() = default;
 
