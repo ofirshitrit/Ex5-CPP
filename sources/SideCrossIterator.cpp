@@ -9,8 +9,8 @@ using namespace ariel;
 
 
 MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer &cont) : container(cont) , currentIndex(0){
-    // change the container such that the elements will be in cross order
-    createCrossOrder();
+    // turn the container such that the elements will be in cross order
+    turnToCrossOrder();
 }
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::begin() {
@@ -25,9 +25,8 @@ MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() {
 
 MagicalContainer::SideCrossIterator &
 MagicalContainer::SideCrossIterator::operator=(const MagicalContainer::SideCrossIterator &other) {
-    if (this != &other){
-        currentIndex = other.currentIndex;
-    }
+    if (&container != &other.container) throw runtime_error("The iterators are points at different containers");
+    currentIndex = other.currentIndex;
     return *this;
 }
 
@@ -61,7 +60,7 @@ MagicalContainer &MagicalContainer::SideCrossIterator::getContainer() const {
     return container;
 }
 
-void MagicalContainer::SideCrossIterator::createCrossOrder() {
+void MagicalContainer::SideCrossIterator::turnToCrossOrder() {
     vector<int> sortedElements = container.getElements();
     sort(sortedElements.begin(),sortedElements.end());
 
