@@ -7,7 +7,10 @@ using namespace ariel;
 
 
 MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &cont) : container(cont), currentIndex(0){
-
+    // Skip non-prime elements
+    while (currentIndex < container.size() && !isPrime(container.getElements()[static_cast<std::vector<int>::size_type>(currentIndex)])) {
+        ++currentIndex;
+    }
 }
 
 MagicalContainer::PrimeIterator &

@@ -53,7 +53,7 @@ bool MagicalContainer::SideCrossIterator::operator<(const MagicalContainer::Side
 }
 
 bool MagicalContainer::SideCrossIterator::operator>(const MagicalContainer::SideCrossIterator &other) const {
-    return currentIndex < other.currentIndex;
+    return currentIndex > other.currentIndex;
 }
 
 MagicalContainer &MagicalContainer::SideCrossIterator::getContainer() const {
@@ -65,8 +65,8 @@ void MagicalContainer::SideCrossIterator::turnToCrossOrder() {
     sort(sortedElements.begin(),sortedElements.end());
 
     vector<int> crossElements(sortedElements.size());
-    int start = 0 , end = sortedElements.size() - 1;
-    for(int i =0; i < crossElements.size(); i+=2){
+    size_t start = 0 , end = sortedElements.size() - 1;
+    for(size_t i = 0; i < crossElements.size(); i+=2){
         crossElements[i] = sortedElements[start];
         crossElements[i+1] = sortedElements[end];
         start++;
