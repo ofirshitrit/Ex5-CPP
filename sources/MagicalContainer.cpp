@@ -21,11 +21,11 @@ void MagicalContainer::removeElement(int element) {
     elements.erase(it, elements.end());
 }
 
-std::vector<int> &MagicalContainer::getElements(){
+vector<int> &MagicalContainer::getElements(){
     return this->elements;
 }
 
 void MagicalContainer::setElements(vector<int> &elements) {
-    this->elements = move(elements);
+    this->elements = std::move(elements);
 }
 

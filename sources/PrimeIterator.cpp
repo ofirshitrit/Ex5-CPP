@@ -6,8 +6,10 @@ using namespace std;
 using namespace ariel;
 
 
-MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &cont) : container(cont), currentIndex(-1){
-
+MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &cont) : container(cont), currentIndex(0){
+    while (currentIndex < container.size() && !isPrime(container.getElements()[static_cast<std::vector<int>::size_type>(currentIndex)])) {
+        ++currentIndex;
+    }
 }
 
 MagicalContainer::PrimeIterator &
@@ -47,19 +49,14 @@ MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
     return *this;
 }
 
-MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin() {
-    PrimeIterator beginIter(container);
-    beginIter.currentIndex = 0;
-    if (!isPrime(container.getElements()[beginIter.currentIndex])) {
-        ++beginIter; // go to the next prime number
-    }
-    return beginIter;
-}
 
+MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin() {
+    return PrimeIterator(container);
+}
 MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() {
-    PrimeIterator endIter(container);
-    endIter.currentIndex = container.size();
-    return endIter;
+    PrimeIterator iter(container);
+    iter.currentIndex = container.size();
+    return iter;
 }
 
 MagicalContainer &MagicalContainer::PrimeIterator::getContainer() const {
