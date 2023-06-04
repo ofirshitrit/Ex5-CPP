@@ -14,13 +14,14 @@ MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer &cont) :
 }
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::begin() {
-    return SideCrossIterator(container);
+    SideCrossIterator beginIter(container);
+    return beginIter;
 }
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() {
-    SideCrossIterator iter(container);
-    iter.currentIndex = container.size();
-    return iter;
+    SideCrossIterator endIter(container);
+    endIter.currentIndex = container.size();
+    return endIter;
 }
 
 MagicalContainer::SideCrossIterator &

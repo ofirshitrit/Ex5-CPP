@@ -6,11 +6,8 @@ using namespace std;
 using namespace ariel;
 
 
-MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &cont) : container(cont), currentIndex(0){
-    // Skip non-prime elements
-    while (currentIndex < container.size() && !isPrime(container.getElements()[static_cast<std::vector<int>::size_type>(currentIndex)])) {
-        ++currentIndex;
-    }
+MagicalContainer::PrimeIterator::PrimeIterator(MagicalContainer &cont) : container(cont), currentIndex(-1){
+
 }
 
 MagicalContainer::PrimeIterator &
@@ -45,18 +42,24 @@ MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
     if (currentIndex >= container.size()) throw runtime_error("Iterator is in the end.");
     do {
         ++currentIndex;
-    } while (currentIndex < container.size() && !isPrime(container.getElements()[static_cast<std::vector<int>::size_type>(currentIndex)]));
+    } // go over the container till you get to a prime number
+    while (currentIndex < container.size() && !isPrime(container.getElements()[static_cast<std::vector<int>::size_type>(currentIndex)]));
     return *this;
 }
 
 MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin() {
-    return PrimeIterator(container);
+    PrimeIterator beginIter(container);
+    beginIter.currentIndex = 0;
+    if (!isPrime(container.getElements()[beginIter.currentIndex])) {
+        ++beginIter; // go to the next prime number
+    }
+    return beginIter;
 }
 
 MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() {
-    PrimeIterator iter(container);
-    iter.currentIndex = container.size();
-    return iter;
+    PrimeIterator endIter(container);
+    endIter.currentIndex = container.size();
+    return endIter;
 }
 
 MagicalContainer &MagicalContainer::PrimeIterator::getContainer() const {
