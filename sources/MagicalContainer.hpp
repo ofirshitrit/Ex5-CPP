@@ -1,5 +1,5 @@
 //
-// Created by ofr on 5/28/23.
+// Created by ofir on 5/28/23.
 //
 
 #ifndef EX5_CPP_A_MAGICALCONTAINER_HPP
@@ -19,6 +19,7 @@ namespace ariel {
         size_t size();
         void removeElement(int element);
         std::vector<int>& getElements();
+        void setElements(std::vector<int> &elements);
 
         //for tidy
         MagicalContainer(const MagicalContainer& other) = delete;
@@ -59,13 +60,11 @@ namespace ariel {
         class SideCrossIterator {
         private:
             MagicalContainer& container;
-            int leftIndex;
-            int rightIndex;
-            bool isLeftTurn;
+            int currentIndex;
 
         public:
             SideCrossIterator(MagicalContainer& cont);
-            SideCrossIterator(SideCrossIterator& other) : container(other.container){}
+            SideCrossIterator(SideCrossIterator& other) : container(other.container) , currentIndex(other.currentIndex){}
             ~SideCrossIterator() = default;
 
             SideCrossIterator begin();
@@ -76,6 +75,7 @@ namespace ariel {
             SideCrossIterator& operator++();
             MagicalContainer &getContainer() const;
 
+            void createCrossOrder();
             bool operator==(const SideCrossIterator& other) const;
             bool operator!=(const SideCrossIterator& other) const;
             bool operator<(const SideCrossIterator& other) const;
