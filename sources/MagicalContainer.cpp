@@ -46,7 +46,7 @@ void MagicalContainer::setElements(vector<int> &elements) {
 
 void MagicalContainer::addForSortedOrder(int element) {
     int rightPosition = 0;
-    while (element > elements[rightPosition] && rightPosition < this->size()){
+    while (rightPosition < this->size() && element > elements[rightPosition]){
         rightPosition++;
     }
     elements.insert(elements.begin() + rightPosition, element);
@@ -83,7 +83,7 @@ bool MagicalContainer::isPrime(int element) {
 void MagicalContainer::addToPrimeElements(int element) {
     // add the prime number to the right position
     size_t rightPosition = 0;
-    while (element > *primeElements[rightPosition] && rightPosition < this->size()){
+    while (rightPosition+1 < this->size() && element > *primeElements[rightPosition] ){
         rightPosition++;
     }
     primeElements.insert(primeElements.begin() + rightPosition, new int(element));
