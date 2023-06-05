@@ -22,6 +22,16 @@ namespace ariel {
         void removeElement(int element);
         std::vector<int>& getElements();
         void setElements(std::vector<int> &elements);
+        bool isPrime(int element);
+
+        // This function add the element such that the elements will be in ascending order
+        void addForSortedOrder(int element);
+        // This function add the element such that the elements will be in side-cross order
+        void addToCrossOrder();
+        // This function add the prime number to the right position in the primes vector
+        void addToPrimeElements(int element);
+        // This function remove the prime number from the right position in the primes vector
+        void eraseFromPrimeElements(int element);
 
         //for tidy
         MagicalContainer(const MagicalContainer& other) = delete;
@@ -36,7 +46,7 @@ namespace ariel {
             int currentIndex;
 
         public:
-            AscendingIterator(MagicalContainer& cont);
+            AscendingIterator(MagicalContainer& cont)  : container(cont) , currentIndex(0) {}
             AscendingIterator(AscendingIterator& other) : container(other.container) , currentIndex(other.currentIndex){}
             ~AscendingIterator() = default;
 
@@ -46,7 +56,6 @@ namespace ariel {
             AscendingIterator& operator=(const AscendingIterator& other);
             int operator*() const;
             AscendingIterator& operator++();
-            MagicalContainer &getContainer();
 
             bool operator==(const AscendingIterator& other) const;
             bool operator!=(const AscendingIterator& other) const;
@@ -65,7 +74,7 @@ namespace ariel {
             int currentIndex;
 
         public:
-            SideCrossIterator(MagicalContainer& cont);
+            SideCrossIterator(MagicalContainer& cont) : container(cont) , currentIndex(0) {}
             SideCrossIterator(SideCrossIterator& other) : container(other.container) , currentIndex(other.currentIndex){}
             ~SideCrossIterator() = default;
 
@@ -77,7 +86,6 @@ namespace ariel {
             SideCrossIterator& operator++();
             MagicalContainer &getContainer() const;
 
-            void turnToCrossOrder();
             bool operator==(const SideCrossIterator& other) const;
             bool operator!=(const SideCrossIterator& other) const;
             bool operator<(const SideCrossIterator& other) const;
@@ -95,7 +103,7 @@ namespace ariel {
             int currentIndex;
 
         public:
-            PrimeIterator(MagicalContainer& cont);
+            PrimeIterator(MagicalContainer& cont) : container(cont), currentIndex(0) {}
             PrimeIterator(PrimeIterator& other) : container(other.container) , currentIndex(other.currentIndex){}
             ~PrimeIterator() = default;
 
@@ -105,7 +113,6 @@ namespace ariel {
             PrimeIterator& operator=(const PrimeIterator& other);
             int operator*() const;
             PrimeIterator& operator++();
-            static bool isPrime(int number);
             MagicalContainer &getContainer() const;
 
             bool operator==(const PrimeIterator& other) const;
@@ -120,15 +127,7 @@ namespace ariel {
         };
 
 
-        void addForSortedOrder(int element);
 
-        void addToCrossOrder();
-
-        bool isPrime(int element);
-
-        void addToPrimeElements(int element);
-
-        void eraseFromPrimeElements(int element);
     };
 
 };

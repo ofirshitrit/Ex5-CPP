@@ -50,14 +50,4 @@ MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() {
     AscendingIterator iter(container);
     iter.currentIndex = container.size();
     return iter;
-
-}
-
-MagicalContainer::AscendingIterator::AscendingIterator(MagicalContainer &cont) : container(cont) , currentIndex(0) {
-    // change the container such that the elements will be in sort order
-//    sort(cont.getElements().begin(),cont.getElements().end());
-}
-
-MagicalContainer &MagicalContainer::AscendingIterator::getContainer()  {
-    return container;
 }

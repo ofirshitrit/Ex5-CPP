@@ -8,10 +8,6 @@ using namespace ariel;
 
 
 
-MagicalContainer::SideCrossIterator::SideCrossIterator(MagicalContainer &cont) : container(cont) , currentIndex(0){
-    // turn the container such that the elements will be in cross order
-    turnToCrossOrder();
-}
 
 MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::begin() {
     SideCrossIterator beginIter(container);
@@ -32,7 +28,7 @@ MagicalContainer::SideCrossIterator::operator=(const MagicalContainer::SideCross
 }
 
 int MagicalContainer::SideCrossIterator::operator*() const {
-    return container.getElements()[static_cast<vector<int>::size_type>(currentIndex)];
+    return *container.sideCrossElements[static_cast<vector<int>::size_type>(currentIndex)];
 }
 
 
@@ -59,19 +55,4 @@ bool MagicalContainer::SideCrossIterator::operator>(const MagicalContainer::Side
 
 MagicalContainer &MagicalContainer::SideCrossIterator::getContainer() const {
     return container;
-}
-
-void MagicalContainer::SideCrossIterator::turnToCrossOrder() {
-    vector<int> sortedElements = container.getElements();
-    sort(sortedElements.begin(),sortedElements.end());
-
-    vector<int> crossElements(sortedElements.size());
-    size_t start = 0 , end = sortedElements.size() - 1;
-    for(size_t i = 0; i < crossElements.size(); i+=2){
-        crossElements[i] = sortedElements[start];
-        crossElements[i+1] = sortedElements[end];
-        start++;
-        end--;
-    }
-    container.setElements(crossElements);
 }

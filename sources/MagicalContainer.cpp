@@ -57,9 +57,9 @@ void MagicalContainer::addToCrossOrder() {
     sideCrossElements.clear();
     // go over the container and take one from the start and one from the end.
     size_t start = 0 , end = this->size() - 1;
-    for(size_t i = 0; i < sideCrossElements.size(); i+=2){
-        sideCrossElements[i] = &(elements[start]);
-        sideCrossElements[i+1] = &(elements[end]);
+    for(size_t i = 0; i < elements.size(); i+=2){
+        sideCrossElements.push_back(&(elements[start]));
+        sideCrossElements.push_back(&(elements[end]));
         start++;
         end--;
     }
