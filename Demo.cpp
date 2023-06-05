@@ -29,15 +29,15 @@ int main() {
         std::cout << *it << ' ';  // 2 25 3 17 9
     }
     std::cout << std::endl;
-//
-//    // Use PrimeIterator to display prime numbers only
-//    std::cout << "Prime numbers:\n";
-//    MagicalContainer::PrimeIterator primeIter(container);
-//    for (auto it = primeIter.begin(); it != primeIter.end(); ++it) {
-//        std::cout << *it << ' ';  // 2 3 17
-//    }
-//    std::cout << std::endl;
-//
+
+    // Use PrimeIterator to display prime numbers only
+    std::cout << "Prime numbers:\n";
+    MagicalContainer::PrimeIterator primeIter(container);
+    for (auto it = primeIter.begin(); it != primeIter.end(); ++it) {
+        std::cout << *it << ' ';  // 2 3 17
+    }
+    std::cout << std::endl;
+
     // Remove an element from the container and display the size
     container.removeElement(9);
     std::cout << "Size of container after removing an element: " << container.size() << std::endl;
