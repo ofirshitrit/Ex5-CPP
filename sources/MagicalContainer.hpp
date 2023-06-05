@@ -11,6 +11,8 @@ namespace ariel {
     class MagicalContainer {
     private:
         std::vector<int> elements;
+        std::vector<int*> primeElements;
+        std::vector<int*> sideCrossElements;
     public:
         MagicalContainer() = default;
         ~MagicalContainer() = default;
@@ -118,6 +120,13 @@ namespace ariel {
         };
 
 
+        void addForSortedOrder(int element);
+
+        void addToCrossOrder();
+
+        bool isPrime(int element);
+
+        void addToPrimeElements(int element);
     };
 
 };
