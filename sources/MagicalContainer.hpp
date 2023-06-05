@@ -127,6 +127,8 @@ namespace ariel {
         bool isPrime(int element);
 
         void addToPrimeElements(int element);
+
+        void eraseFromPrimeElements(int element);
     };
 
 };

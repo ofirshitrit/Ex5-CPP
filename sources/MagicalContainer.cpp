@@ -8,16 +8,11 @@ using namespace std;
 using namespace ariel;
 
 void MagicalContainer::addElement(int element) {
-
-    /**
-     * 1. add in ascending order
-     * 2. add to the cross order
-     * 3. if the number is prime add to the primes
-     */
+     //Add the element such that it would be in ascending order
      addForSortedOrder(element);
-
+    //Add pointers to the elements in the crossElements vector
      addToCrossOrder();
-
+    //If the number is prime add the pointer to the element to the primeElements
      if (isPrime(element)){
          addToPrimeElements(element);
      }
@@ -29,9 +24,16 @@ size_t MagicalContainer::size() {
 }
 
 void MagicalContainer::removeElement(int element) {
+    //Remove the element from the container
     auto it = remove(elements.begin(), elements.end(), element);
     if (it == elements.end()) throw runtime_error("Cant remove a non-existing element");
     elements.erase(it, elements.end());
+    //This function clean the crossElements vector and then create a new side-cross order
+    addToCrossOrder();
+    //If the element is prime remove his pointer from the primesElements
+    if (isPrime(element)){
+        eraseFromPrimeElements(element);
+    }
 }
 
 vector<int> &MagicalContainer::getElements(){
@@ -79,14 +81,18 @@ bool MagicalContainer::isPrime(int element) {
 }
 
 void MagicalContainer::addToPrimeElements(int element) {
-    // clear the vector because every add to the container change the cross order.
-    primeElements.clear();
     // add the prime number to the right position
     size_t rightPosition = 0;
     while (element > *primeElements[rightPosition] && rightPosition < this->size()){
         rightPosition++;
     }
-    primeElements.insert(primeElements.begin() + rightPosition, element);
+    primeElements.insert(primeElements.begin() + rightPosition, new int(element));
+}
+
+void MagicalContainer::eraseFromPrimeElements(int element) {
+    auto it = remove(primeElements.begin(), primeElements.end(), new int(element));
+    if (it == primeElements.end()) throw runtime_error("Cant remove a non-existing element");
+    primeElements.erase(it, primeElements.end());
 }
 
 
