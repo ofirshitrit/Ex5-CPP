@@ -45,11 +45,11 @@ void MagicalContainer::setElements(vector<int> &elements) {
 }
 
 void MagicalContainer::addForSortedOrder(int element) {
-    int rightPosition = 0;
-    while (rightPosition < this->size() && element > elements[rightPosition]){
+    size_t rightPosition = 0;
+    while (rightPosition < static_cast<std::vector<int>::size_type>(this->size()) && element > elements[rightPosition]){
         rightPosition++;
     }
-    elements.insert(elements.begin() + rightPosition, element);
+    elements.insert(elements.begin() + static_cast<std::vector<int*>::difference_type>(rightPosition), element);
 }
 
 void MagicalContainer::addToCrossOrder() {
@@ -83,10 +83,10 @@ bool MagicalContainer::isPrime(int element) {
 void MagicalContainer::addToPrimeElements(int element) {
     // add the prime number to the right position
     size_t rightPosition = 0;
-    while (rightPosition+1 < this->size() && element > *primeElements[rightPosition] ){
+    while (rightPosition < primeElements.size() && element > *primeElements[rightPosition] ){
         rightPosition++;
     }
-    primeElements.insert(primeElements.begin() + rightPosition, new int(element));
+    primeElements.insert(primeElements.begin() + static_cast<std::vector<int*>::difference_type>(rightPosition), new int(element));
 }
 
 void MagicalContainer::eraseFromPrimeElements(int element) {

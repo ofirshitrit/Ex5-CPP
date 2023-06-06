@@ -35,7 +35,7 @@ int MagicalContainer::PrimeIterator::operator*() const {
 }
 
 MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
-    if (currentIndex >= container.size()) throw runtime_error("Iterator is in the end.");
+    if (currentIndex >= container.primeElements.size()) throw runtime_error("Iterator is in the end.");
     ++currentIndex;
     return *this;
 }
