@@ -15,7 +15,7 @@ namespace ariel {
         std::vector<int*> sideCrossElements;
     public:
         MagicalContainer() = default;
-        ~MagicalContainer() = default;
+        ~MagicalContainer();
 
         void addElement(int element);
         size_t size();

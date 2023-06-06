@@ -95,5 +95,12 @@ void MagicalContainer::eraseFromPrimeElements(int element) {
     primeElements.erase(it, primeElements.end());
 }
 
-
+MagicalContainer::~MagicalContainer() {
+//    for (int* ptr : primeElements) {
+//        delete ptr;
+//    }
+//    for (int* ptr : sideCrossElements) {
+//        delete ptr;
+//    }
+}
 
