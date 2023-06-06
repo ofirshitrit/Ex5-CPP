@@ -86,21 +86,23 @@ void MagicalContainer::addToPrimeElements(int element) {
     while (rightPosition < primeElements.size() && element > *primeElements[rightPosition] ){
         rightPosition++;
     }
+
     primeElements.insert(primeElements.begin() + static_cast<std::vector<int*>::difference_type>(rightPosition), new int(element));
 }
 
 void MagicalContainer::eraseFromPrimeElements(int element) {
-    auto it = remove(primeElements.begin(), primeElements.end(), new int(element));
-    if (it == primeElements.end()) throw runtime_error("Cant remove a non-existing element");
-    primeElements.erase(it, primeElements.end());
+    for (auto it = primeElements.begin(); it != primeElements.end(); ++it) {
+        if (**it == element) {
+            delete *it;
+            primeElements.erase(it);
+            break;
+        }
+    }
 }
 
 MagicalContainer::~MagicalContainer() {
-//    for (int* ptr : primeElements) {
-//        delete ptr;
-//    }
-//    for (int* ptr : sideCrossElements) {
-//        delete ptr;
-//    }
+    for ( int* itr : primeElements) {
+        delete itr;
+    }
 }
 
