@@ -125,24 +125,10 @@ CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofr/CLionProjects/Ex5-CPP-B/TestRunner.cpp -o CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.s
 
-CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/flags.make
-CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o: /home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp
-CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o -MF CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o.d -o CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o -c /home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp
-
-CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp > CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.i
-
-CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp -o CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.s
-
 CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/flags.make
 CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o: /home/ofr/CLionProjects/Ex5-CPP-B/sources/SideCrossIterator.cpp
 CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o -MF CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o.d -o CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o -c /home/ofr/CLionProjects/Ex5-CPP-B/sources/SideCrossIterator.cpp
 
 CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.i: cmake_force
@@ -156,7 +142,7 @@ CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.s: cmake_force
 CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/flags.make
 CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o: /home/ofr/CLionProjects/Ex5-CPP-B/sources/PrimeIterator.cpp
 CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o -MF CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o.d -o CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o -c /home/ofr/CLionProjects/Ex5-CPP-B/sources/PrimeIterator.cpp
 
 CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.i: cmake_force
@@ -170,7 +156,7 @@ CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.s: cmake_force
 CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/flags.make
 CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o: /home/ofr/CLionProjects/Ex5-CPP-B/sources/Iterator.cpp
 CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o -MF CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o.d -o CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o -c /home/ofr/CLionProjects/Ex5-CPP-B/sources/Iterator.cpp
 
 CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.i: cmake_force
@@ -181,16 +167,30 @@ CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofr/CLionProjects/Ex5-CPP-B/sources/Iterator.cpp -o CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.s
 
+CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/flags.make
+CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o: /home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp
+CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o: CMakeFiles/EX5_CPP_B.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o -MF CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o.d -o CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o -c /home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp
+
+CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp > CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.i
+
+CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp -o CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.s
+
 # Object files for target EX5_CPP_B
 EX5_CPP_B_OBJECTS = \
 "CMakeFiles/EX5_CPP_B.dir/Demo.cpp.o" \
 "CMakeFiles/EX5_CPP_B.dir/sources/MagicalContainer.cpp.o" \
 "CMakeFiles/EX5_CPP_B.dir/StudentTest1.cpp.o" \
 "CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.o" \
-"CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o" \
 "CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o" \
 "CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o" \
-"CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o"
+"CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o" \
+"CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o"
 
 # External object files for target EX5_CPP_B
 EX5_CPP_B_EXTERNAL_OBJECTS =
@@ -199,10 +199,10 @@ EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/Demo.cpp.o
 EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/sources/MagicalContainer.cpp.o
 EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/StudentTest1.cpp.o
 EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.o
-EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o
 EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o
 EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o
 EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o
+EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o
 EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/build.make
 EX5_CPP_B: CMakeFiles/EX5_CPP_B.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ofr/CLionProjects/Ex5-CPP-B/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable EX5_CPP_B"

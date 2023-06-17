@@ -1,5 +1,5 @@
 //
-// Created by ofr on 5/28/23.
+// Created by ofir on 5/28/23.
 //
 #include "MagicalContainer.hpp"
 using namespace std;
@@ -22,18 +22,6 @@ bool MagicalContainer::Iterator::operator!=(const Iterator& other) const {
     return !(*this == other);
 }
 
-
-
-MagicalContainer::Iterator MagicalContainer::Iterator::begin() {
-    Iterator iter(container);
-    return iter;
-}
-
-MagicalContainer::Iterator MagicalContainer::Iterator::end() {
-    Iterator iter(container);
-    iter.currentIndex = container.size();
-    return iter;
-}
 
 MagicalContainer::Iterator &MagicalContainer::Iterator::operator=(const MagicalContainer::Iterator &other) {
     if (&container != &other.container) throw runtime_error("The iterators are points at different containers");

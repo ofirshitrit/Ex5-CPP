@@ -105,4 +105,3 @@ MagicalContainer::~MagicalContainer() {
         delete itr;
     }
 }
-

@@ -49,9 +49,6 @@ namespace ariel {
             Iterator(Iterator& other) : container(other.container) , currentIndex(other.currentIndex){}
             ~Iterator() = default;
 
-            Iterator begin();
-            virtual Iterator end();
-
             bool operator==(const Iterator& other) const;
             bool operator!=(const Iterator& other) const;
             bool operator<(const Iterator& other) const;
@@ -71,30 +68,36 @@ namespace ariel {
 
 
         };
-        class AscendingIterator : Iterator {
+        class AscendingIterator : public Iterator {
 
         public:
             AscendingIterator(MagicalContainer& magicalContainer) : Iterator(magicalContainer) {}
             AscendingIterator(AscendingIterator& other) : Iterator(other) {}
+            AscendingIterator& begin();
+            AscendingIterator& end();
+
         };
 
-        class SideCrossIterator : Iterator{
+        class SideCrossIterator : public Iterator{
 
         public:
             SideCrossIterator(MagicalContainer& magicalContainer) : Iterator(magicalContainer) {}
             SideCrossIterator(SideCrossIterator& other) : Iterator(other){}
+            SideCrossIterator& begin();
+            SideCrossIterator& end();
             int operator*() const override;
 
         };
 
-        class PrimeIterator : Iterator{
+        class PrimeIterator : public Iterator{
 
         public:
             PrimeIterator(MagicalContainer& magicalContainer) : Iterator(magicalContainer) {}
             PrimeIterator(PrimeIterator& other) : Iterator(other){}
             int operator*() const override;
             PrimeIterator& operator++() override;
-            PrimeIterator end();
+            PrimeIterator& begin();
+            PrimeIterator& end();
 
         };
 

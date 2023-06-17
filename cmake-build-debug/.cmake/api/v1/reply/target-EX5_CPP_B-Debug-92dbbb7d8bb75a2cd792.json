@@ -132,12 +132,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "sources/AscendingIterator.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "sources/SideCrossIterator.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -151,6 +145,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "sources/Iterator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "sources/AscendingIterator.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -16,10 +16,13 @@ MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
     setCurrentIndex(getCurrentIndex()+1);
     return *this;
 }
-
-MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() {
-    PrimeIterator iter(getContainer());
-    iter.setCurrentIndex(getContainer().primeElements.size()) ;
-    return iter;
+MagicalContainer::PrimeIterator& MagicalContainer::PrimeIterator::begin() {
+    return *this;
 }
+
+MagicalContainer::PrimeIterator& MagicalContainer::PrimeIterator::end() {
+    setCurrentIndex(getContainer().primeElements.size());
+    return *this;
+}
+
 
