@@ -40,89 +40,61 @@ namespace ariel {
         MagicalContainer& operator=(MagicalContainer&& other) = delete;
 
         // Iterators
-        class AscendingIterator {
+        class Iterator {
         private:
             MagicalContainer& container;
             int currentIndex;
-
         public:
-            AscendingIterator(MagicalContainer& cont)  : container(cont) , currentIndex(0) {}
-            AscendingIterator(AscendingIterator& other) : container(other.container) , currentIndex(other.currentIndex){}
-            ~AscendingIterator() = default;
+            Iterator(MagicalContainer& cont) : container(cont), currentIndex(0) {}
+            Iterator(Iterator& other) : container(other.container) , currentIndex(other.currentIndex){}
+            ~Iterator() = default;
 
-            AscendingIterator begin();
-            AscendingIterator end();
+            Iterator begin();
+            virtual Iterator end();
 
-            AscendingIterator& operator=(const AscendingIterator& other);
-            int operator*() const;
-            AscendingIterator& operator++();
+            bool operator==(const Iterator& other) const;
+            bool operator!=(const Iterator& other) const;
+            bool operator<(const Iterator& other) const;
+            bool operator>(const Iterator& other) const;
 
-            bool operator==(const AscendingIterator& other) const;
-            bool operator!=(const AscendingIterator& other) const;
-            bool operator<(const AscendingIterator& other) const;
-            bool operator>(const AscendingIterator& other) const;
+            Iterator& operator=(const Iterator& other);
+            virtual Iterator& operator++();
+            virtual int operator*() const;
 
-            //for tidy
-            AscendingIterator(AscendingIterator&& other) = default;
-            AscendingIterator& operator=(AscendingIterator&& other) = delete;
-
-        };
-
-        class SideCrossIterator {
-        private:
-            MagicalContainer& container;
-            int currentIndex;
-
-        public:
-            SideCrossIterator(MagicalContainer& cont) : container(cont) , currentIndex(0) {}
-            SideCrossIterator(SideCrossIterator& other) : container(other.container) , currentIndex(other.currentIndex){}
-            ~SideCrossIterator() = default;
-
-            SideCrossIterator begin();
-            SideCrossIterator end();
-
-            SideCrossIterator& operator=(const SideCrossIterator& other);
-            int operator*() const;
-            SideCrossIterator& operator++();
             MagicalContainer &getContainer() const;
+            int getCurrentIndex() const;
+            void setCurrentIndex(int currentIndex);
 
-            bool operator==(const SideCrossIterator& other) const;
-            bool operator!=(const SideCrossIterator& other) const;
-            bool operator<(const SideCrossIterator& other) const;
-            bool operator>(const SideCrossIterator& other) const;
+            // for tidy:
+            Iterator(Iterator&& other) = default;
+            Iterator& operator=(Iterator&& other) = delete;
 
-            //for tidy
-            SideCrossIterator(SideCrossIterator&& other) = default;
-            SideCrossIterator& operator=(SideCrossIterator&& other) = delete;
+
+        };
+        class AscendingIterator : Iterator {
+
+        public:
+            AscendingIterator(MagicalContainer& magicalContainer) : Iterator(magicalContainer) {}
+            AscendingIterator(AscendingIterator& other) : Iterator(other) {}
+        };
+
+        class SideCrossIterator : Iterator{
+
+        public:
+            SideCrossIterator(MagicalContainer& magicalContainer) : Iterator(magicalContainer) {}
+            SideCrossIterator(SideCrossIterator& other) : Iterator(other){}
+            int operator*() const override;
 
         };
 
-        class PrimeIterator {
-        private:
-            MagicalContainer& container;
-            int currentIndex;
+        class PrimeIterator : Iterator{
 
         public:
-            PrimeIterator(MagicalContainer& cont) : container(cont), currentIndex(0) {}
-            PrimeIterator(PrimeIterator& other) : container(other.container) , currentIndex(other.currentIndex){}
-            ~PrimeIterator() = default;
-
-            PrimeIterator begin();
+            PrimeIterator(MagicalContainer& magicalContainer) : Iterator(magicalContainer) {}
+            PrimeIterator(PrimeIterator& other) : Iterator(other){}
+            int operator*() const override;
+            PrimeIterator& operator++() override;
             PrimeIterator end();
-
-            PrimeIterator& operator=(const PrimeIterator& other);
-            int operator*() const;
-            PrimeIterator& operator++();
-            MagicalContainer &getContainer() const;
-
-            bool operator==(const PrimeIterator& other) const;
-            bool operator!=(const PrimeIterator& other) const;
-            bool operator<(const PrimeIterator& other) const;
-            bool operator>(const PrimeIterator& other) const;
-
-            //for tidy
-            PrimeIterator(PrimeIterator&& other) = default;
-            PrimeIterator& operator=(PrimeIterator&& other) = delete;
 
         };
 

@@ -94,6 +94,9 @@
 		<Unit filename="/home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp">
 			<Option target="EX5_CPP_B"/>
 		</Unit>
+		<Unit filename="/home/ofr/CLionProjects/Ex5-CPP-B/sources/Iterator.cpp">
+			<Option target="EX5_CPP_B"/>
+		</Unit>
 		<Unit filename="/home/ofr/CLionProjects/Ex5-CPP-B/sources/MagicalContainer.cpp">
 			<Option target="EX5_CPP_B"/>
 		</Unit>

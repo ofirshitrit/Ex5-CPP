@@ -6,51 +6,20 @@ using namespace std;
 using namespace ariel;
 
 
-MagicalContainer::PrimeIterator &
-MagicalContainer::PrimeIterator::operator=(const MagicalContainer::PrimeIterator &other) {
-    if (&container != &other.container) throw runtime_error("The iterators are points at different containers");
-    currentIndex = other.currentIndex;
-    return *this;
-}
-
-bool MagicalContainer::PrimeIterator::operator==(const PrimeIterator& other) const {
-    return currentIndex == other.currentIndex;
-}
-
-
-bool MagicalContainer::PrimeIterator::operator!=(const PrimeIterator& other) const {
-    return !(*this == other);
-}
-
-bool MagicalContainer::PrimeIterator::operator<(const MagicalContainer::PrimeIterator &other) const {
-    return currentIndex < other.currentIndex;
-}
-
-bool MagicalContainer::PrimeIterator::operator>(const MagicalContainer::PrimeIterator &other) const {
-    return currentIndex > other.currentIndex;
-}
 
 int MagicalContainer::PrimeIterator::operator*() const {
-    return *container.primeElements[static_cast<vector<int>::size_type>(currentIndex)];
+    return *getContainer().primeElements[static_cast<vector<int>::size_type>(getCurrentIndex())];
 }
 
 MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() {
-    if (currentIndex >= container.primeElements.size()) throw runtime_error("Iterator is in the end.");
-    ++currentIndex;
+    if (getCurrentIndex() >= getContainer().primeElements.size()) throw runtime_error("Iterator is in the end.");
+    setCurrentIndex(getCurrentIndex()+1);
     return *this;
 }
 
-
-MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::begin() {
-    return PrimeIterator(container);
-}
 MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() {
-    PrimeIterator iter(container);
-    iter.currentIndex = container.primeElements.size();
+    PrimeIterator iter(getContainer());
+    iter.setCurrentIndex(getContainer().primeElements.size()) ;
     return iter;
-}
-
-MagicalContainer &MagicalContainer::PrimeIterator::getContainer() const {
-    return container;
 }
 

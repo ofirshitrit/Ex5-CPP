@@ -225,6 +225,30 @@ sources/AscendingIterator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX5_CPP_B.dir/build.make CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.s
 .PHONY : sources/AscendingIterator.cpp.s
 
+sources/Iterator.o: sources/Iterator.cpp.o
+.PHONY : sources/Iterator.o
+
+# target to build an object file
+sources/Iterator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX5_CPP_B.dir/build.make CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o
+.PHONY : sources/Iterator.cpp.o
+
+sources/Iterator.i: sources/Iterator.cpp.i
+.PHONY : sources/Iterator.i
+
+# target to preprocess a source file
+sources/Iterator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX5_CPP_B.dir/build.make CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.i
+.PHONY : sources/Iterator.cpp.i
+
+sources/Iterator.s: sources/Iterator.cpp.s
+.PHONY : sources/Iterator.s
+
+# target to generate assembly for a file
+sources/Iterator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EX5_CPP_B.dir/build.make CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.s
+.PHONY : sources/Iterator.cpp.s
+
 sources/MagicalContainer.o: sources/MagicalContainer.cpp.o
 .PHONY : sources/MagicalContainer.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... sources/AscendingIterator.o"
 	@echo "... sources/AscendingIterator.i"
 	@echo "... sources/AscendingIterator.s"
+	@echo "... sources/Iterator.o"
+	@echo "... sources/Iterator.i"
+	@echo "... sources/Iterator.s"
 	@echo "... sources/MagicalContainer.o"
 	@echo "... sources/MagicalContainer.i"
 	@echo "... sources/MagicalContainer.s"

@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.o.d"
   "CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o"
   "CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o.d"
+  "CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o"
+  "CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o.d"
   "CMakeFiles/EX5_CPP_B.dir/sources/MagicalContainer.cpp.o"
   "CMakeFiles/EX5_CPP_B.dir/sources/MagicalContainer.cpp.o.d"
   "CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o"

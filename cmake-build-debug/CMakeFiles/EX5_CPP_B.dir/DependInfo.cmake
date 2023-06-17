@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ofr/CLionProjects/Ex5-CPP-B/StudentTest1.cpp" "CMakeFiles/EX5_CPP_B.dir/StudentTest1.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/StudentTest1.cpp.o.d"
   "/home/ofr/CLionProjects/Ex5-CPP-B/TestRunner.cpp" "CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.o.d"
   "/home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp" "CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o.d"
+  "/home/ofr/CLionProjects/Ex5-CPP-B/sources/Iterator.cpp" "CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/sources/Iterator.cpp.o.d"
   "/home/ofr/CLionProjects/Ex5-CPP-B/sources/MagicalContainer.cpp" "CMakeFiles/EX5_CPP_B.dir/sources/MagicalContainer.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/sources/MagicalContainer.cpp.o.d"
   "/home/ofr/CLionProjects/Ex5-CPP-B/sources/PrimeIterator.cpp" "CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/sources/PrimeIterator.cpp.o.d"
   "/home/ofr/CLionProjects/Ex5-CPP-B/sources/SideCrossIterator.cpp" "CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/sources/SideCrossIterator.cpp.o.d"
