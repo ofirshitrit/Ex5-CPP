@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ofr/CLionProjects/Ex5-CPP-B/Demo.cpp" "CMakeFiles/EX5_CPP_B.dir/Demo.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/Demo.cpp.o.d"
+  "/home/ofr/CLionProjects/Ex5-CPP-B/MyTest.cpp" "CMakeFiles/EX5_CPP_B.dir/MyTest.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/MyTest.cpp.o.d"
   "/home/ofr/CLionProjects/Ex5-CPP-B/StudentTest1.cpp" "CMakeFiles/EX5_CPP_B.dir/StudentTest1.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/StudentTest1.cpp.o.d"
   "/home/ofr/CLionProjects/Ex5-CPP-B/TestRunner.cpp" "CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/TestRunner.cpp.o.d"
   "/home/ofr/CLionProjects/Ex5-CPP-B/sources/AscendingIterator.cpp" "CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o" "gcc" "CMakeFiles/EX5_CPP_B.dir/sources/AscendingIterator.cpp.o.d"
